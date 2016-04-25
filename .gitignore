@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+.DS_Store
+*.sublime-workspace
+.venv
+.env
+*.pyc
+starter/starter/__pycache__
+frontend/dist/
+frontend/webpack-assets.json
+starter/staticfiles/
+db
+logs
+venv

@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": ["dist", "node_modules", ".venv", "starter/starter/staticfiles"]
+		},
+		{
+			"path": "node_modules/redux-resource"
+		}
+	]
+}
