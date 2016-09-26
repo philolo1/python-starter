@@ -18,6 +18,9 @@ RUN pip install -r requirements.txt
 COPY package.json /app/
 RUN npm install -d
 
+# Link gulp
+RUN ln -s /app/node_modules/.bin/gulp /usr/bin/gulp
+
 COPY . /app/code/
 RUN ls /app/code/
 WORKDIR /app/code
