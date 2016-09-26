@@ -5,38 +5,30 @@ This tech stack uses React on the frontend and Django/Python on the backend.
 
 
 ## Development Setup
-The following dependencies are needed for running the app locally:
+This starter pack uses [Docker](https://www.docker.com/) to set up the development environment. You should install Docker with [docker-compose](https://docs.docker.com/compose/).
 
-* Python 3
-* Node >= v0.12
-* Postgres
-* Gulp (install with `npm install -g gulp`)
+After installing Docker, you should first copy `sample.env` to `.env` and modify its values:
 
-Assuming the dependencies are installed, you should first copy `sample.env` to `.env` and modify its values:
-
-* `DATABASE_URL` should point to your local Postgres database being used for this project.
 * `SECRET` should be a random string
 
-You should then install the necessary Python and NPM libraries. It's recommended to do this in a [virtualenv](https://virtualenv.readthedocs.org/en/latest/).
+You should then build the Docker container for the development project.
 
 ```
-npm install -d
-pip install -r requirements.txt
-```
-
-Once everything is installed, you should initialize the database:
-
-```
-foreman run python starter/manage.py migrate
+docker-compose build
 ```
 
 You can then start the app:
+```
+docker-compose up
+```
+
+Once the app is running, you should initialize the database:
 
 ```
-foreman start
+docker-compose run python starter/manage.py migrate
 ```
 
-It will be available at http://localhost:5000 and includes live reloading of code.
+The app will be available at http://localhost:8000 and includes live reloading of code.
 
 Before you can load the homepage, you need to post a blog entry. You can do so from the admin interface (instructions [below](#administration-interface).
 
@@ -67,7 +59,7 @@ Before you can load the homepage, you need to post a blog entry. You can do so f
 The administration interface is availabe at http://localhost:8000/admin/ and requires an admin user to access. To create an admin user, just run this command:
 
 ```
-foreman run python starter/manage.py createsuperuser
+docker-compose run python starter/manage.py createsuperuser
 ```
 
 ## Configuration
