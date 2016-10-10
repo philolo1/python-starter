@@ -25,7 +25,7 @@ docker-compose up
 Once the app is running, you should initialize the database:
 
 ```
-docker-compose run python starter/manage.py migrate
+docker-compose run web python starter/manage.py migrate
 ```
 
 The app will be available at http://localhost:8000 and includes live reloading of code.
@@ -59,7 +59,7 @@ Before you can load the homepage, you need to post a blog entry. You can do so f
 The administration interface is availabe at http://localhost:8000/admin/ and requires an admin user to access. To create an admin user, just run this command:
 
 ```
-docker-compose run python starter/manage.py createsuperuser
+docker-compose run web python starter/manage.py createsuperuser
 ```
 
 ## Configuration
