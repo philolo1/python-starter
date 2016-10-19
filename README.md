@@ -51,7 +51,11 @@ Before you can load the homepage, you need to post a blog entry. You can do so f
 
         heroku config:set SECRET=make_this_random
 
-5. Set up the database and run migrations:
+5. Push your code to heroku:
+
+        git push heroku master
+
+6. Set up the database and run migrations:
 
         heroku run python starter/manage.py migrate
 
